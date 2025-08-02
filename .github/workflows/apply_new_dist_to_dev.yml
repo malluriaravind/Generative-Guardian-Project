@@ -1,0 +1,47 @@
+name: Build and Deploy dist through ssh
+
+on:
+  push:
+    branches:
+      - develop  # Trigger only on pushes to the develop branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.1.0
+        with:
+          node-version: '18.12.1'  # Use Node.js version required for your project
+
+      - name: Install Dependencies
+        run: |
+          cd ./control_panel/web
+          npm install  # Install project dependencies
+
+      - name: Build Project with Raw Build
+        run: |
+          cd ./control_panel/web
+          npm run rawbuild  # Execute your custom build command
+
+      - name: Archive dist folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-artifact
+          path: ./control_panel/web/dist 
+        
+
+      - name: Copy dist to VPS
+        env:
+          VPS_SSH_KEY_BASE64: ${{ secrets.VPS_SSH_KEY_BASE64 }}  # Use GitHub Secrets for sensitive data
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_IP: ${{ secrets.VPS_IP }}
+        run: |
+          echo "$VPS_SSH_KEY_BASE64" | base64 --decode > private_key
+          chmod 600 private_key
+          scp -i private_key -o StrictHostKeyChecking=no -C -r ./control_panel/web/dist/ $VPS_USER@$VPS_IP:~/trussed/control_panel/web/
+          rm private_key  # Remove key after deployment for security

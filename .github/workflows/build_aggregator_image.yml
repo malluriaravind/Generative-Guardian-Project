@@ -1,0 +1,33 @@
+name: Build aggregator docker image
+
+on:
+  watch:
+  push:
+    branches: [ "develop" ]
+    paths:
+      - "aggregator/VERSION"
+    tags-ignore: 
+      - "*"
+
+jobs:
+
+  build_and_push_image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build docker
+      run: | 
+          export VERSION=$(cat ./aggregator/VERSION)
+          docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          docker build -t  adankar/trussed_ai_dp:$VERSION -f agg.Dockerfile .
+          docker push adankar/trussed_ai_dp:$VERSION
+          docker tag adankar/trussed_ai_dp:$VERSION adankar/trussed_ai_dp
+          docker push adankar/trussed_ai_dp
+    - uses: actions/checkout@v4
+    - name: Build aggregator full version
+      run: | 
+          export VERSION=$(cat ./aggregator/VERSION)
+          docker build --build-arg VERSION=$VERSION -t adankar/trussed_ai_dp:$VERSION-full -f agg-full.Dockerfile .
+          docker push adankar/trussed_ai_dp:$VERSION-full
+          docker tag adankar/trussed_ai_dp:$VERSION-full adankar/trussed_ai_dp:latest-full
+          docker push adankar/trussed_ai_dp:latest-full

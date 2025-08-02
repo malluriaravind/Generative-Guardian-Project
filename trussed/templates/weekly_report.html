@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Added viewport for responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Report</title>
+  <!-- Adding Google Fonts for improved typography -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+    .container {
+      background-color: #f7f9fc;
+      padding: 20px 0;
+      width: 100%;
+    }
+    .email-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+    .header {
+      /* Using an appealing orange gradient */
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .header p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .highlight {
+      background-color: #e0f7fa;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px;
+    }
+    .card-section {
+      padding: 20px;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;  /* Uniform gap between the two cards */
+      margin-bottom: 24px; /* Gap between rows */
+    }
+    .card {
+      flex: 0 1 calc(50% - 12px); /* Two cards per row */
+      min-width: 240px;
+      background-color: #ffffff;
+      border: 1px solid #eeeeee;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .card p {
+      margin: 8px 0 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+    }
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 6px;
+      color: #007bff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #eeeeee;
+      font-size: 14px;
+      color: #000;
+    }
+    th {
+      background-color: #B2DFDB;
+    }
+    .footer {
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      border-top: 1px solid #dddddd;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td align="center">
+          <div class="email-wrapper">
+            <!-- Header -->
+            <div class="header">
+              <h1>TRUSSED</h1>
+              <p>Weekly AI Platform Insights for {{ recipient_name }}</p>
+              <p>{{ start_date }} - {{ end_date }}</p>
+            </div>
+            
+            <!-- Compliance Report Message at the Top -->
+            <div class="highlight">
+              Please find the attached compliance report from {{ start_date }} - {{ end_date }}.
+            </div>
+            
+            <!-- Top Four Cards in Two Rows -->
+            <div class="card-section">
+              <div class="cards">
+                <!-- Total Prompts Card -->
+                <div class="card">
+                  <h3>Total Prompts</h3>
+                  <p>{{ total_logs }}</p>
+                </div>
+                <!-- Applications Card -->
+                <div class="card">
+                  <h3>Applications</h3>
+                  <p>{{ api_key_count }}</p>
+                </div>
+              </div>
+              <div class="cards">
+                <!-- LLM Providers Card -->
+                <div class="card">
+                  <h3>LLM Providers</h3>
+                  <p>{{ llm_count }}</p>
+                </div>
+                <!-- Availability Card -->
+                <div class="card">
+                  <h3>Availability</h3>
+                  <p>99.97%</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Prompt Volume by Application Section -->
+            <div class="card-section">
+              <h2 class="section-title">Prompt Volume by Application</h2>
+              {% if prompt_counts_by_app %}
+              <table>
+                <thead>
+                  <tr>
+                    <th>Application</th>
+                    <th>Prompt Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in prompt_counts_by_app %}
+                  <tr>
+                    <td>{{ item.app_name or 'Unknown App' }}</td>
+                    <td>{{ item.prompt_count }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <p>No prompt data available.</p>
+              {% endif %}
+            </div>
+            
+            <!-- Prompt Volume by Model Section -->
+            <div class="card-section">
+              <h2 class="section-title">Prompt Volume by Model</h2>
+              {% if prompt_counts_by_model %}
+              <table>
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>Prompt Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for item in prompt_counts_by_model %}
+                  <tr>
+                    <td>{{ item.model or 'Unknown Model' }}</td>
+                    <td>{{ item.prompt_count }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <p>No prompt data available for models.</p>
+              {% endif %}
+            </div>
+            
+            <!-- Overall HTTP Status Code Totals Section -->
+            <div class="card-section">
+              <h2 class="section-title">Overall HTTP Status Code Overview</h2>
+              {% if http_status_counts_by_app %}
+              <table>
+                <thead>
+                  <tr>
+                    <th>Total</th>
+                    <th>200</th>
+                    <th>400</th>
+                    <th>401</th>
+                    <th>403</th>
+                    <th>404</th>
+                    <th>422</th>
+                    <th>429</th>
+                    <th>500</th>
+                    <th>502</th>
+                    <th>503</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Overall</td>
+                    <td>{{ http_status_counts_by_app["200"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["400"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["401"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["403"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["404"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["422"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["429"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["500"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["502"] or 0 }}</td>
+                    <td>{{ http_status_counts_by_app["503"] or 0 }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              {% else %}
+              <p>No HTTP status code data available.</p>
+              {% endif %}
+            </div>
+            
+            <!-- HTTP Status Code Meanings Section -->
+            <div class="card-section">
+              <h2 class="section-title">HTTP Status Code Overview</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status Code</th>
+                    <th>Count</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>200</td>
+                    <td>{{ http_status_counts_by_app["200"] or 0 }}</td>
+                    <td>OK</td>
+                    <td>Success</td>
+                  </tr>
+                  <tr>
+                    <td>400</td>
+                    <td>{{ http_status_counts_by_app["400"] or 0 }}</td>
+                    <td>Bad Request</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>401</td>
+                    <td>{{ http_status_counts_by_app["401"] or 0 }}</td>
+                    <td>Unauthorized</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>403</td>
+                    <td>{{ http_status_counts_by_app["403"] or 0 }}</td>
+                    <td>Forbidden</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>404</td>
+                    <td>{{ http_status_counts_by_app["404"] or 0 }}</td>
+                    <td>Not Found</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>422</td>
+                    <td>{{ http_status_counts_by_app["422"] or 0 }}</td>
+                    <td>Unprocessable Entity</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>429</td>
+                    <td>{{ http_status_counts_by_app["429"] or 0 }}</td>
+                    <td>Too Many Requests</td>
+                    <td>Client Error</td>
+                  </tr>
+                  <tr>
+                    <td>500</td>
+                    <td>{{ http_status_counts_by_app["500"] or 0 }}</td>
+                    <td>Internal Server Error</td>
+                    <td>Server Error</td>
+                  </tr>
+                  <tr>
+                    <td>501</td>
+                    <td>{{ http_status_counts_by_app["501"] or 0 }}</td>
+                    <td>Not Implemented</td>
+                    <td>Server Error</td>
+                  </tr>
+                  <tr>
+                    <td>502</td>
+                    <td>{{ http_status_counts_by_app["502"] or 0 }}</td>
+                    <td>Bad Gateway</td>
+                    <td>Server Error</td>
+                  </tr>
+                  <tr>
+                    <td>503</td>
+                    <td>{{ http_status_counts_by_app["503"] or 0 }}</td>
+                    <td>Service Unavailable</td>
+                    <td>Server Error</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <!-- Footer -->
+            <div class="footer">
+              © {{ year }} TRUSSED. All rights reserved.
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

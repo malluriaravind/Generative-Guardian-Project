@@ -1,0 +1,63 @@
+[project]
+name = "trussed-dp"
+requires-python = ">= 3.12"
+
+[tool.poetry]
+name = "aggregator"
+version = "0.0.1"
+description = ""
+authors = ["Arthur Gocnharuk <af3.inet@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+trussed-core = {path = "..", develop = true}
+uvloop = "^0.19.0"
+uwsgi = "^2.0.23"
+numpy = "^1.26.4"
+backoff = "^2.2.1"
+sse-starlette = "^1.8.2"
+tiktoken = "^0.7.0"
+spacy = "^3.7.4"
+presidio-analyzer = "~2.2.354"
+presidio-anonymizer = "~2.2.354"
+lingua-language-detector = "^2.0.2"
+attrs = "^23.2.0"
+lmdb = "^1.4.1"
+orjson = "^3.10.5"
+regex = "*"
+blingfire = "^0.1.8"
+torch = {version = "^2.4.1+cpu", source = "pytorch_cpu"}
+optimum = {extras = ["onnxruntime"], version = "^1.24.0"}
+prometheus-client = "^0.21.1"
+python-json-logger = "^2.0.7"
+transformers = "^4.48.3"
+beanie = {git = "https://github.com/Trussed-ai/beanie2.git"}
+psutil = "^7.0.0"
+codeprov = {git = "https://github.com/Trussed-ai/codeprov.git"}
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+mypy = "^1.14.1"
+
+[[tool.poetry.source]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 110
+skip-string-normalization = true
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+ignore = ["F403", "F405"]
+
+[tool.ruff.format]
+quote-style = "single"

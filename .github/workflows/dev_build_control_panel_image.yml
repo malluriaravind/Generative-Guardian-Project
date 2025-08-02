@@ -1,0 +1,38 @@
+name: Build dev control panel docker image
+
+on:
+  push:
+    branches: [ "develop" ]
+    tags-ignore: 
+      - "*"
+  create:
+    tags:
+      - 'v.*'
+
+jobs:
+
+  build_and_push_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to DockerHub
+        run: |
+            docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+
+      - name: Get current version
+        id: get_version
+        run: |
+            VERSION=$(cat ./aggregator/VERSION)
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Get short commit hash
+        id: get_commit_hash
+        run: echo "COMMIT_HASH=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_ENV
+
+      - name: Build dev docker on push event
+        if: github.event_name == 'push'
+        run: | 
+            docker build -t adankar/trussed_ai_cp:${{ env.VERSION }}-dev.${{ env.COMMIT_HASH }} -f control.Dockerfile .
+            docker push adankar/trussed_ai_cp:${{ env.VERSION }}-dev.${{ env.COMMIT_HASH }}

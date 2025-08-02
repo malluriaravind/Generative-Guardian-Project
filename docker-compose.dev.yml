@@ -1,0 +1,88 @@
+version: "3.3"
+services:
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=trusseddb
+    restart: always
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb-data:/data/db
+
+  mongo-express:
+    image: mongo-express:latest
+    environment:
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+      - ME_CONFIG_MONGODB_URL=mongodb://root:password@mongodb:27017
+      - ME_CONFIG_CONNECT_RETRIES=5
+      - ME_CONFIG_BASICAUTH_USERNAME=mongouser
+      - ME_CONFIG_BASICAUTH_PASSWORD=mongopassword
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongodb
+
+  control_panel:
+    build:
+      dockerfile: control.Dockerfile
+      context: .
+    restart: unless-stopped
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+
+    environment:
+      - JWT_SECRET=asdasdasdasdadadasdadasdqwdqdqwd
+      - DATABASE_URL=mongodb://root:password@mongodb:27017
+      - DATABASE_NAME=trussed
+      - ENVIRONMENT=docker
+      - ROOT_USER_EMAIL=test@test.com
+      - ROOT_USER_PASSWORD=test123test
+    volumes:
+      - control_panel_dist:/app/control_panel/api/static/
+      - ./logs/control_panel-access.log:/app/output.log
+      - ./logs/control_panel-error.log:/app/error.log
+
+  aggregator:    
+    image: adankar/trussed_ai_dp:latest
+    restart: unless-stopped
+    expose:
+      - 7007
+    environment:
+      - DOMAIN=trussedproject.co
+      - MONGODB_URL=mongodb://root:password@mongodb:27017
+      - MONGODB_NAME=trusseddb
+      - SMTP_FROM="Trussed AI <alerts@trussed.ai>"
+      - SMTP_HOST=mail.trussedproject.co
+      - SMTP_PORT=587
+      - SMTP_USER=user
+      - SMTP_PASSWORD=password
+    volumes:
+      - ./logs/aggregator-access.log:/app/output.log
+      - ./logs/aggregator-error.log:/app/error.log
+
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    expose:
+      - 80
+      - 443
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - control_panel_dist:/web/trussed/dist/:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.crt:/etc/ssl/sslcerts/nginx.crt
+      - ./nginx.key:/etc/ssl/sslcerts/nginx.key
+    depends_on:
+      - control_panel
+      - aggregator
+      
+volumes:
+  mongodb-data:
+  control_panel_dist:

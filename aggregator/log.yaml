@@ -1,0 +1,49 @@
+version: 1
+disable_existing_loggers: false
+
+filters:
+  add_context:
+    (): core.logs.AddContextFilter
+
+formatters:
+  default:
+    (): trussed.logs.TcFormatter
+    fmt: '%(asctime)s %(levelname)s %(name)s %(request_id)s: %(message)s'
+    defaults:
+      request_id: ''
+
+  json:
+    (): trussed.logs.TcJsonFormatter
+    fmt: '%(asctime)s %(levelname)s %(name)s %(request_id)s: %(message)s'
+    json_indent: 2
+
+handlers:
+  default:
+    class: logging.StreamHandler
+    filters: ['add_context']
+    formatter: default
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.handlers.RotatingFileHandler
+    filters: ['add_context']
+    formatter: json
+    filename: ./logs/app.log
+    maxBytes: 10485760 # 10MB
+    backupCount: 10
+    encoding: utf8
+
+  queue:
+    class: trussed.utils.logging.LmdbQueueHandler
+    filters: ['add_context']
+
+loggers:
+  pymongo:
+    level: INFO
+  
+  httpcore:
+    level: INFO
+
+root:
+  level: INFO
+  handlers: [default, queue]

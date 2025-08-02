@@ -1,0 +1,590 @@
+[
+    {
+        "model": "xx_sent_ud_sm",
+        "version": "3.7.0",
+        "lang": "xx",
+        "size": "4 MB",
+        "description": "Multi-language pipeline optimized for CPU. Components: senter."
+    },
+    {
+        "model": "xx_ent_wiki_sm",
+        "version": "3.7.0",
+        "lang": "xx",
+        "size": "10 MB",
+        "description": "Multi-language pipeline optimized for CPU. Components: ner."
+    },
+    {
+        "model": "en_core_web_sm",
+        "version": "3.7.1",
+        "lang": "en",
+        "size": "12 MB",
+        "description": "English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "en_core_web_md",
+        "version": "3.7.1",
+        "lang": "en",
+        "size": "40 MB",
+        "description": "English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "en_core_web_trf",
+        "version": "3.7.3",
+        "lang": "en",
+        "size": "436 MB",
+        "description": "English transformer pipeline (Transformer(name='roberta-base', piece_encoder='byte-bpe', stride=104, type='roberta', width=768, window=144, vocab_size=50265)). Components: transformer, tagger, parser, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "en_core_web_lg",
+        "version": "3.7.1",
+        "lang": "en",
+        "size": "560 MB",
+        "description": "English pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ca_core_news_sm",
+        "version": "3.7.0",
+        "lang": "ca",
+        "size": "18 MB",
+        "description": "Catalan pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ca_core_news_md",
+        "version": "3.7.0",
+        "lang": "ca",
+        "size": "46 MB",
+        "description": "Catalan pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ca_core_news_trf",
+        "version": "3.7.2",
+        "lang": "ca",
+        "size": "435 MB",
+        "description": "Catalan transformer pipeline (Transformer(name='projecte-aina/roberta-base-ca-v2', piece_encoder='byte-bpe', stride=112, type='roberta', width=768, window=144, vocab_size=50262)). Components: transformer, morphologizer, parser, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ca_core_news_lg",
+        "version": "3.7.0",
+        "lang": "ca",
+        "size": "547 MB",
+        "description": "Catalan pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "da_core_news_sm",
+        "version": "3.7.0",
+        "lang": "da",
+        "size": "11 MB",
+        "description": "Danish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "da_core_news_md",
+        "version": "3.7.0",
+        "lang": "da",
+        "size": "40 MB",
+        "description": "Danish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "da_core_news_trf",
+        "version": "3.7.2",
+        "lang": "da",
+        "size": "420 MB",
+        "description": "Danish transformer pipeline (Transformer(name='vesteinn/DanskBERT', piece_encoder='xlm-roberta-sentencepiece', stride=120, type='xlm-roberta', width=768, window=152, vocab_size=50005)). Components: transformer, morphologizer, parser, lemmatizer (trainable_lemmatizer), ner, attribute_ruler."
+    },
+    {
+        "model": "da_core_news_lg",
+        "version": "3.7.0",
+        "lang": "da",
+        "size": "540 MB",
+        "description": "Danish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "de_core_news_sm",
+        "version": "3.7.0",
+        "lang": "de",
+        "size": "13 MB",
+        "description": "German pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "de_core_news_md",
+        "version": "3.7.0",
+        "lang": "de",
+        "size": "42 MB",
+        "description": "German pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "de_dep_news_trf",
+        "version": "3.7.2",
+        "lang": "de",
+        "size": "391 MB",
+        "description": "German transformer pipeline (Transformer(name='bert-base-german-cased', piece_encoder='bert-wordpiece', stride=136, type='bert', width=768, window=176, vocab_size=30000)). Components: transformer, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer)."
+    },
+    {
+        "model": "de_core_news_lg",
+        "version": "3.7.0",
+        "lang": "de",
+        "size": "541 MB",
+        "description": "German pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "el_core_news_sm",
+        "version": "3.7.0",
+        "lang": "el",
+        "size": "12 MB",
+        "description": "Greek pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "el_core_news_md",
+        "version": "3.7.0",
+        "lang": "el",
+        "size": "40 MB",
+        "description": "Greek pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "el_core_news_lg",
+        "version": "3.7.0",
+        "lang": "el",
+        "size": "542 MB",
+        "description": "Greek pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "es_core_news_sm",
+        "version": "3.7.0",
+        "lang": "es",
+        "size": "12 MB",
+        "description": "Spanish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "es_core_news_md",
+        "version": "3.7.0",
+        "lang": "es",
+        "size": "40 MB",
+        "description": "Spanish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "es_dep_news_trf",
+        "version": "3.7.2",
+        "lang": "es",
+        "size": "388 MB",
+        "description": "Spanish transformer pipeline (Transformer(name='dccuchile/bert-base-spanish-wwm-cased', piece_encoder='bert-wordpiece', stride=112, type='bert', width=768, window=158, vocab_size=31002)). Components: transformer, morphologizer, parser, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "es_core_news_lg",
+        "version": "3.7.0",
+        "lang": "es",
+        "size": "541 MB",
+        "description": "Spanish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "fi_core_news_sm",
+        "version": "3.7.0",
+        "lang": "fi",
+        "size": "13 MB",
+        "description": "Finnish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "fi_core_news_md",
+        "version": "3.7.0",
+        "lang": "fi",
+        "size": "65 MB",
+        "description": "Finnish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "fi_core_news_lg",
+        "version": "3.7.0",
+        "lang": "fi",
+        "size": "220 MB",
+        "description": "Finnish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "fr_core_news_sm",
+        "version": "3.7.0",
+        "lang": "fr",
+        "size": "15 MB",
+        "description": "French pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "fr_core_news_md",
+        "version": "3.7.0",
+        "lang": "fr",
+        "size": "43 MB",
+        "description": "French pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "fr_dep_news_trf",
+        "version": "3.7.2",
+        "lang": "fr",
+        "size": "379 MB",
+        "description": "French transformer pipeline (Transformer(name='camembert-base', piece_encoder='camembert-sentencepiece', stride=128, type='camembert', width=768, window=168, vocab_size=32005)). Components: transformer, morphologizer, parser, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "fr_core_news_lg",
+        "version": "3.7.0",
+        "lang": "fr",
+        "size": "545 MB",
+        "description": "French pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "hr_core_news_sm",
+        "version": "3.7.0",
+        "lang": "hr",
+        "size": "12 MB",
+        "description": "Croatian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "hr_core_news_md",
+        "version": "3.7.0",
+        "lang": "hr",
+        "size": "64 MB",
+        "description": "Croatian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "hr_core_news_lg",
+        "version": "3.7.0",
+        "lang": "hr",
+        "size": "220 MB",
+        "description": "Croatian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "it_core_news_sm",
+        "version": "3.7.0",
+        "lang": "it",
+        "size": "12 MB",
+        "description": "Italian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "it_core_news_md",
+        "version": "3.7.0",
+        "lang": "it",
+        "size": "40 MB",
+        "description": "Italian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "it_core_news_lg",
+        "version": "3.7.0",
+        "lang": "it",
+        "size": "541 MB",
+        "description": "Italian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "ja_core_news_sm",
+        "version": "3.7.0",
+        "lang": "ja",
+        "size": "11 MB",
+        "description": "Japanese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ja_core_news_md",
+        "version": "3.7.0",
+        "lang": "ja",
+        "size": "40 MB",
+        "description": "Japanese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ja_core_news_trf",
+        "version": "3.7.2",
+        "lang": "ja",
+        "size": "320 MB",
+        "description": "Japanese transformer pipeline (Transformer(name='cl-tohoku/bert-base-japanese-char-v2', piece_encoder='char', stride=160, type='bert', width=768, window=216, vocab_size=6144)). Components: transformer, morphologizer, parser, ner."
+    },
+    {
+        "model": "ja_core_news_lg",
+        "version": "3.7.0",
+        "lang": "ja",
+        "size": "529 MB",
+        "description": "Japanese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ko_core_news_sm",
+        "version": "3.7.0",
+        "lang": "ko",
+        "size": "13 MB",
+        "description": "Korean pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "ko_core_news_md",
+        "version": "3.7.0",
+        "lang": "ko",
+        "size": "65 MB",
+        "description": "Korean pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "ko_core_news_lg",
+        "version": "3.7.0",
+        "lang": "ko",
+        "size": "220 MB",
+        "description": "Korean pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "lt_core_news_sm",
+        "version": "3.7.0",
+        "lang": "lt",
+        "size": "12 MB",
+        "description": "Lithuanian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "lt_core_news_md",
+        "version": "3.7.0",
+        "lang": "lt",
+        "size": "40 MB",
+        "description": "Lithuanian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "lt_core_news_lg",
+        "version": "3.7.0",
+        "lang": "lt",
+        "size": "541 MB",
+        "description": "Lithuanian pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "mk_core_news_sm",
+        "version": "3.7.0",
+        "lang": "mk",
+        "size": "17 MB",
+        "description": "Macedonian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "mk_core_news_md",
+        "version": "3.7.0",
+        "lang": "mk",
+        "size": "42 MB",
+        "description": "Macedonian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "mk_core_news_lg",
+        "version": "3.7.0",
+        "lang": "mk",
+        "size": "310 MB",
+        "description": "Macedonian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "nb_core_news_sm",
+        "version": "3.7.0",
+        "lang": "nb",
+        "size": "11 MB",
+        "description": "Norwegian (Bokm\u00e5l) pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "nb_core_news_md",
+        "version": "3.7.0",
+        "lang": "nb",
+        "size": "40 MB",
+        "description": "Norwegian (Bokm\u00e5l) pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "nb_core_news_lg",
+        "version": "3.7.0",
+        "lang": "nb",
+        "size": "542 MB",
+        "description": "Norwegian (Bokm\u00e5l) pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "nl_core_news_sm",
+        "version": "3.7.0",
+        "lang": "nl",
+        "size": "12 MB",
+        "description": "Dutch pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "nl_core_news_md",
+        "version": "3.7.0",
+        "lang": "nl",
+        "size": "40 MB",
+        "description": "Dutch pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "nl_core_news_lg",
+        "version": "3.7.0",
+        "lang": "nl",
+        "size": "541 MB",
+        "description": "Dutch pipeline optimized for CPU. Components: tok2vec, morphologizer, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "pl_core_news_sm",
+        "version": "3.7.0",
+        "lang": "pl",
+        "size": "19 MB",
+        "description": "Polish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), tagger, senter, ner."
+    },
+    {
+        "model": "pl_core_news_md",
+        "version": "3.7.0",
+        "lang": "pl",
+        "size": "47 MB",
+        "description": "Polish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), tagger, senter, ner."
+    },
+    {
+        "model": "pl_core_news_lg",
+        "version": "3.7.0",
+        "lang": "pl",
+        "size": "547 MB",
+        "description": "Polish pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), tagger, senter, ner."
+    },
+    {
+        "model": "pt_core_news_sm",
+        "version": "3.7.0",
+        "lang": "pt",
+        "size": "12 MB",
+        "description": "Portuguese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "pt_core_news_md",
+        "version": "3.7.0",
+        "lang": "pt",
+        "size": "40 MB",
+        "description": "Portuguese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "pt_core_news_lg",
+        "version": "3.7.0",
+        "lang": "pt",
+        "size": "541 MB",
+        "description": "Portuguese pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ro_core_news_sm",
+        "version": "3.7.0",
+        "lang": "ro",
+        "size": "12 MB",
+        "description": "Romanian pipeline optimized for CPU. Components: tok2vec, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ro_core_news_md",
+        "version": "3.7.0",
+        "lang": "ro",
+        "size": "40 MB",
+        "description": "Romanian pipeline optimized for CPU. Components: tok2vec, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ro_core_news_lg",
+        "version": "3.7.0",
+        "lang": "ro",
+        "size": "542 MB",
+        "description": "Romanian pipeline optimized for CPU. Components: tok2vec, tagger, parser, lemmatizer (trainable_lemmatizer), senter, ner, attribute_ruler."
+    },
+    {
+        "model": "ru_core_news_sm",
+        "version": "3.7.0",
+        "lang": "ru",
+        "size": "14 MB",
+        "description": "Russian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ru_core_news_md",
+        "version": "3.7.0",
+        "lang": "ru",
+        "size": "39 MB",
+        "description": "Russian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "ru_core_news_lg",
+        "version": "3.7.0",
+        "lang": "ru",
+        "size": "489 MB",
+        "description": "Russian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "sl_core_news_sm",
+        "version": "3.7.0",
+        "lang": "sl",
+        "size": "13 MB",
+        "description": "Slovenian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), attribute_ruler, senter, ner."
+    },
+    {
+        "model": "sl_core_news_md",
+        "version": "3.7.0",
+        "lang": "sl",
+        "size": "64 MB",
+        "description": "Slovenian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), attribute_ruler, senter, ner."
+    },
+    {
+        "model": "sl_core_news_lg",
+        "version": "3.7.0",
+        "lang": "sl",
+        "size": "221 MB",
+        "description": "Slovenian pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), attribute_ruler, senter, ner."
+    },
+    {
+        "model": "sl_core_news_trf",
+        "version": "3.7.2",
+        "lang": "sl",
+        "size": "397 MB",
+        "description": "Slovenian transformer pipeline (Transformer(name='EMBEDDIA/sloberta', piece_encoder='camembert-sentencepiece', stride=128, type='camembert', width=768, window=168, vocab_size=32005)). Components: transformer, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), ner."
+    },
+    {
+        "model": "sv_core_news_sm",
+        "version": "3.7.0",
+        "lang": "sv",
+        "size": "12 MB",
+        "description": "Swedish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "sv_core_news_md",
+        "version": "3.7.0",
+        "lang": "sv",
+        "size": "63 MB",
+        "description": "Swedish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "sv_core_news_lg",
+        "version": "3.7.0",
+        "lang": "sv",
+        "size": "218 MB",
+        "description": "Swedish pipeline optimized for CPU. Components: tok2vec, tagger, morphologizer, parser, lemmatizer (trainable_lemmatizer), senter, ner."
+    },
+    {
+        "model": "uk_core_news_sm",
+        "version": "3.7.0",
+        "lang": "uk",
+        "size": "14 MB",
+        "description": "Ukrainian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "uk_core_news_md",
+        "version": "3.7.0",
+        "lang": "uk",
+        "size": "65 MB",
+        "description": "Ukrainian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "uk_core_news_lg",
+        "version": "3.7.0",
+        "lang": "uk",
+        "size": "220 MB",
+        "description": "Ukrainian pipeline optimized for CPU. Components: tok2vec, morphologizer, parser, senter, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "uk_core_news_trf",
+        "version": "3.7.2",
+        "lang": "uk",
+        "size": "391 MB",
+        "description": "Ukrainian transformer pipeline (Transformer(name='ukr-models/xlm-roberta-base-uk', piece_encoder='xlm-roberta-sentencepiece', stride=168, type='xlm-roberta', width=768, window=216, vocab_size=31274)). Components: transformer, morphologizer, parser, ner, attribute_ruler, lemmatizer."
+    },
+    {
+        "model": "zh_core_web_sm",
+        "version": "3.7.0",
+        "lang": "zh",
+        "size": "46 MB",
+        "description": "Chinese pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler."
+    },
+    {
+        "model": "zh_core_web_md",
+        "version": "3.7.0",
+        "lang": "zh",
+        "size": "74 MB",
+        "description": "Chinese pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler."
+    },
+    {
+        "model": "zh_core_web_trf",
+        "version": "3.7.2",
+        "lang": "zh",
+        "size": "396 MB",
+        "description": "Chinese transformer pipeline (Transformer(name='bert-base-chinese', piece_encoder='bert-wordpiece', stride=152, type='bert', width=768, window=208, vocab_size=21128)). Components: transformer, tagger, parser, ner, attribute_ruler."
+    },
+    {
+        "model": "zh_core_web_lg",
+        "version": "3.7.0",
+        "lang": "zh",
+        "size": "575 MB",
+        "description": "Chinese pipeline optimized for CPU. Components: tok2vec, tagger, parser, senter, ner, attribute_ruler."
+    }
+]

@@ -1,0 +1,22 @@
+   616	Arthur Goncharuk <af3.inet@gmail.com>
+   241	tholuce <vasylll95@gmail.com>
+   117	asda@test.com <asda@test.com>
+    70	mainde <maindev@trussed.ai>
+    66	vavava <wzysome@gmail.com>
+    36	vaaa <vaaa>
+    21	kanagapriya16 <135326850+kanagapriya16@users.noreply.github.com>
+    17	maindev <maindev@trussed.ai>
+    16	Maharajan Nachiappan <maharajan.nachi@gmail.com>
+    12	Pavlo Dema <demapavlo@gmail.com>
+    10	Ajay G <binary-bard@users.noreply.github.com>
+     9	Vasyl Kushnir <v.kushnir@redgenn.com>
+     5	root <root@aravind.b1tx03mvqx3upgqr4pambpjsba.bx.internal.cloudapp.net>
+     4	Dema Pavlo <demapavlo@gmail.com>
+     4	Paul Dema <demapavlo@gmail.com>
+     3	Aravind <59567400+malluriaravind@users.noreply.github.com>
+     3	Manish Kumar <manishkumar@Manishs-iMac.local>
+     3	root <root@ip-172-31-84-226.ec2.internal>
+     2	Maha <maharajan.nachi@gmail.com>
+     1	DemaPavlo <demapavlo@gmail.com>
+     1	root <root@ip-172-31-16-89.ec2.internal>
+     1	root <root@trussed-controller.uglt3bg500qujp21qub2gvay1c.dx.internal.cloudapp.net>

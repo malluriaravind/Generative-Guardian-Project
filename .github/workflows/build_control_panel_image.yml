@@ -1,0 +1,25 @@
+name: Build control panel docker image
+
+on:
+  watch:
+  push:
+    branches: [ "develop" ]
+    paths:
+      - "control_panel/VERSION"
+    tags-ignore: 
+      - "*"
+
+jobs:
+
+  build_and_push_image:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build docker
+      run: | 
+          export VERSION=$(cat ./control_panel/VERSION)
+          docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          docker build -t  adankar/trussed_ai_cp:$VERSION -f control.Dockerfile .
+          docker push adankar/trussed_ai_cp:$VERSION
+          docker tag adankar/trussed_ai_cp:$VERSION adankar/trussed_ai_cp
+          docker push adankar/trussed_ai_cp
